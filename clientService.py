@@ -3,9 +3,11 @@ from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
-USER_SERVICE_URL = 'http://localhost:5000/users'
+USER_SERVICE_URL = 'http://127.0.0.1:5000/users'
 ORDER_SERVICE_URL = 'http://localhost:5001/orders'
 PRODUCT_SERVICE_URL = 'http://localhost:5002/products'
+
+# Test Data : http://localhost:5003/user-orders/1
 
 @app.route('/user-orders/<user_id>', methods=['GET'])
 def get_user_order_details(user_id):

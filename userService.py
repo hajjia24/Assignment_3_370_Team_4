@@ -8,6 +8,10 @@ client = MongoClient('localhost', 27017)
 db = client['user_database']
 collection = db['users']
 
+
+# Test Data : http://127.0.0.1:5000/users/1
+
+
 @app.route('/users/<user_id>', methods=['GET'])
 def get_user(user_id):
     user = collection.find_one({"id": user_id})
